@@ -5,10 +5,11 @@ if (!$conn) {
 	die("Connection failed: " . mysqli_connect_error());
 }
 $name = $_POST['username'];
-$Password = $_POST['password'];
+$email = $_POST['email'];
+$password = $_POST['password'];
 
-$sql = "INSERT INTO login (email,password)
-VALUES ('$name', '$Password')";
+$sql = "INSERT INTO login (username,email,password)
+VALUES ('$name', '$email','$password')";
 
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
